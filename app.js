@@ -60,7 +60,9 @@ app.post("/listings", async (req,res) => {
 app.get("/listings/:id/edit", async (req, res) => {
     let {id} = req.params;
     const listing = await Listing.findById(id);
-    res.render("listings/edit.ejs",{listing}); 
+     console.log("Database image data:" , listing.image);
+    res.render("listings/edit.ejs",{listing});
+     
 });
 
 //update route
